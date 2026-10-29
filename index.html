@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calamar Cevicheria</title>
+  <meta name="description" content="Calamar Cevicheria: ceviches, mariscos y sabores del mar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo">
+        <!-- TODO: reemplazar por <img src="img/logo.png" alt="Calamar Cevicheria"> cuando llegue el logo -->
+        <span class="logo__text">Calamar <em>Cevicheria</em></span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <a href="#menu">Menú</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#galeria">Galería</a>
+        <a href="#visitanos">Visítanos</a>
+        <a href="#contacto" class="btn btn--small">Reservar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Portada -->
+    <section id="inicio" class="hero">
+      <div class="container hero__content">
+        <p class="eyebrow">Ceviches &amp; mariscos</p>
+        <h1>El sabor del mar,<br>recién preparado.</h1>
+        <p class="hero__lead">Texto de bienvenida pendiente. Aquí va una frase corta que describa el restaurante.</p>
+        <div class="hero__actions">
+          <a href="#menu" class="btn">Ver el menú</a>
+          <a href="#visitanos" class="btn btn--ghost">Cómo llegar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menú -->
+    <section id="menu" class="section">
+      <div class="container">
+        <h2 class="section__title">Nuestro menú</h2>
+        <p class="section__lead">Platos y precios de ejemplo — se reemplazan con el menú real.</p>
+
+        <div class="menu-grid">
+          <div class="menu-cat">
+            <h3>Ceviches</h3>
+            <ul class="menu-list">
+              <li><span>Ceviche de pescado</span><span class="price">$0.00</span></li>
+              <li><span>Ceviche de calamar</span><span class="price">$0.00</span></li>
+              <li><span>Ceviche mixto</span><span class="price">$0.00</span></li>
+            </ul>
+          </div>
+          <div class="menu-cat">
+            <h3>Platos fuertes</h3>
+            <ul class="menu-list">
+              <li><span>Calamares fritos</span><span class="price">$0.00</span></li>
+              <li><span>Arroz con mariscos</span><span class="price">$0.00</span></li>
+              <li><span>Pescado a la plancha</span><span class="price">$0.00</span></li>
+            </ul>
+          </div>
+          <div class="menu-cat">
+            <h3>Bebidas</h3>
+            <ul class="menu-list">
+              <li><span>Limonada</span><span class="price">$0.00</span></li>
+              <li><span>Refrescos</span><span class="price">$0.00</span></li>
+              <li><span>Cervezas</span><span class="price">$0.00</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section id="nosotros" class="section section--alt">
+      <div class="container split">
+        <div class="photo-placeholder">Foto del local</div>
+        <div>
+          <h2 class="section__title">Nosotros</h2>
+          <p>Historia del restaurante pendiente: cómo empezó, qué los hace distintos y de dónde vienen sus mariscos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria" class="section">
+      <div class="container">
+        <h2 class="section__title">Galería</h2>
+        <!-- TODO: reemplazar cada placeholder por <img src="img/..." alt="..."> -->
+        <div class="gallery">
+          <div class="photo-placeholder">Foto 1</div>
+          <div class="photo-placeholder">Foto 2</div>
+          <div class="photo-placeholder">Foto 3</div>
+          <div class="photo-placeholder">Foto 4</div>
+          <div class="photo-placeholder">Foto 5</div>
+          <div class="photo-placeholder">Foto 6</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ubicación y horario -->
+    <section id="visitanos" class="section section--alt">
+      <div class="container split">
+        <div>
+          <h2 class="section__title">Visítanos</h2>
+          <p><strong>Dirección:</strong> pendiente</p>
+          <h3>Horario</h3>
+          <ul class="hours">
+            <li><span>Lunes – Viernes</span><span>pendiente</span></li>
+            <li><span>Sábado</span><span>pendiente</span></li>
+            <li><span>Domingo</span><span>pendiente</span></li>
+          </ul>
+        </div>
+        <!-- TODO: reemplazar por el iframe de Google Maps del local -->
+        <div class="photo-placeholder">Mapa</div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section cta">
+      <div class="container">
+        <h2 class="section__title">Reserva o haz tu pedido</h2>
+        <p class="section__lead">Escríbenos y te atendemos al momento.</p>
+        <!-- TODO: poner el número real en el enlace, formato https://wa.me/50300000000 -->
+        <a href="#" class="btn btn--light">Escribir por WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; <span id="year"></span> Calamar Cevicheria</p>
+      <!-- TODO: enlaces reales de redes sociales -->
+      <nav class="footer__social">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">TikTok</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
