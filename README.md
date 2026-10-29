@@ -24,7 +24,6 @@ con el pedido escrito y el total. No hay servidor: todo pasa en el navegador.
 - [ ] Logo (`img/logo.png`)
 - [ ] Fotos: portada, local y galería
 - [ ] Enlaces de redes sociales
-- [ ] Confirmar si hacen entregas a domicilio
 
 ## Ver la página en tu computadora
 

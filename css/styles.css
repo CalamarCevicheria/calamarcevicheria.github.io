@@ -1,4 +1,4 @@
-/* Colores tomados del menú impreso: papel envejecido, tinta y plata */
+/* Colores tomados del menú impreso y del logo: papel envejecido, mar profundo y cobre */
 :root {
   --paper: #f4eee5;
   --paper-2: #e9e0d2;
@@ -7,8 +7,8 @@
   --muted: #6a645d;
   --sea: #17414b;
   --sea-dark: #0e2a31;
-  --brass: #b5884a;
-  --brass-dark: #9a7038;
+  --brass: #b8733f;
+  --brass-dark: #95592c;
   --wa: #1f9d55;
   --white: #ffffff;
   --radius: 12px;
@@ -84,7 +84,9 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; margin: 0 
   color: var(--white);
 }
 .header__inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-.logo { display: flex; flex-direction: column; line-height: 1; color: var(--white); text-decoration: none; }
+.logo { display: flex; align-items: center; gap: .6rem; color: var(--white); text-decoration: none; }
+.logo__img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px rgba(184, 115, 63, .6); }
+.logo__text { display: flex; flex-direction: column; line-height: 1; }
 .logo__name { font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .logo__sub { font-family: var(--font-display); font-size: .7rem; letter-spacing: .35em; text-transform: uppercase; color: var(--brass); margin-top: 4px; }
 

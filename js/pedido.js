@@ -263,11 +263,7 @@ $$('dialog').forEach((d) => d.addEventListener('click', (e) => {
 // ---------- Enviar por WhatsApp ----------
 const formPedido = $('#form-pedido');
 
-formPedido.addEventListener('change', () => {
-  $('#campo-direccion').hidden = formPedido.entrega.value !== 'A domicilio';
-});
-
-function mensaje({ nombre, entrega, direccion }) {
+function mensaje({ nombre }) {
   const lineas = pedido.map((l) => [
     `• ${l.cantidad}x ${l.nombre} — ${L(l.precio * l.cantidad)}`,
     ...l.detalle.map((d) => `   ${d}`),
@@ -282,20 +278,15 @@ function mensaje({ nombre, entrega, direccion }) {
     `*Total: ${L(total())}*`,
     '',
     `Nombre: ${nombre}`,
-    `Entrega: ${entrega}${direccion ? ` — ${direccion}` : ''}`,
+    'Para recoger',
   ].join('\n');
 }
 
 formPedido.addEventListener('submit', (e) => {
   e.preventDefault();
-  const datos = {
-    nombre: formPedido.nombre.value.trim(),
-    entrega: formPedido.entrega.value,
-    direccion: formPedido.entrega.value === 'A domicilio' ? formPedido.direccion.value.trim() : '',
-  };
+  const datos = { nombre: formPedido.nombre.value.trim() };
   const falta = !pedido.length ? 'Tu pedido está vacío.'
-    : !datos.nombre ? 'Escribe tu nombre.'
-      : datos.entrega === 'A domicilio' && !datos.direccion ? 'Escribe la dirección de entrega.' : '';
+    : !datos.nombre ? 'Escribe tu nombre.' : '';
   if (falta) {
     $('#pedido-error').textContent = falta;
     $('#pedido-error').hidden = false;

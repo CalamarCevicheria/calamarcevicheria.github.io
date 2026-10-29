@@ -16,9 +16,12 @@
   <header class="header">
     <div class="container header__inner">
       <a href="#inicio" class="logo">
-        <!-- TODO: reemplazar por <img src="img/logo.png" alt="Calamar Cevicheria"> cuando llegue el logo -->
-        <span class="logo__name">Calamar</span>
-        <span class="logo__sub">Cevicheria</span>
+        <!-- Logo provisional: si img/logo.jpg no existe, queda solo el texto -->
+        <img src="img/logo.jpg" alt="" class="logo__img" onerror="this.remove()">
+        <span class="logo__text">
+          <span class="logo__name">Calamar</span>
+          <span class="logo__sub">Cevichería</span>
+        </span>
       </a>
       <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -39,7 +42,7 @@
       <div class="container hero__content">
         <p class="eyebrow">Ceviches &amp; mariscos</p>
         <h1>Tu ceviche,<br>a tu manera.</h1>
-        <p class="hero__lead">Elige tus mariscos, tu complemento y tu salsa. Arma tu pedido aquí y te lo enviamos directo a WhatsApp.</p>
+        <p class="hero__lead">Frescura que se nota desde el primer bocado. Ceviches preparados al momento: elige tus mariscos, tu complemento y tu salsa, y envía tu pedido por WhatsApp.</p>
         <div class="hero__actions">
           <a href="#menu" class="btn btn--brass">Armar mi pedido</a>
           <a href="#visitanos" class="btn btn--ghost">Cómo llegar</a>
@@ -110,7 +113,7 @@
       <div class="container split">
         <div>
           <h2 class="section__title">Visítanos</h2>
-          <p><strong>Dirección:</strong> Plaza Inari, 2 Avenida, San Pedro Sula, Cortés</p>
+          <p><strong>Dirección:</strong> Plaza Inari, local 11, 2 Avenida, San Pedro Sula, Cortés</p>
           <p><strong>Teléfono:</strong> <a href="tel:+50489977604">+504 8997-7604</a></p>
           <h3>Horario</h3>
           <ul class="hours">
@@ -141,11 +144,13 @@
   <footer class="footer">
     <div class="container footer__inner">
       <p>&copy; <span id="year"></span> Calamar Cevicheria</p>
-      <!-- TODO: enlaces reales de redes sociales -->
       <nav class="footer__social">
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-        <a href="#">TikTok</a>
+        <a href="https://www.instagram.com/calamar.cevicheriahn/" target="_blank" rel="noopener">Instagram</a>
+        <!-- TODO: agregar Facebook cuando tengamos el enlace exacto de la página -->
+        <!-- <a href="https://www.facebook.com/..." target="_blank" rel="noopener">Facebook</a> -->
+
+
+        <a href="https://wa.me/50489977604" target="_blank" rel="noopener">WhatsApp</a>
       </nav>
     </div>
   </footer>
@@ -225,17 +230,7 @@
           <span>Tu nombre</span>
           <input name="nombre" autocomplete="name" required>
         </label>
-        <fieldset>
-          <legend>Entrega</legend>
-          <div class="chips">
-            <label class="chip"><input type="radio" name="entrega" value="Para recoger" checked><span>Para recoger</span></label>
-            <label class="chip"><input type="radio" name="entrega" value="A domicilio"><span>A domicilio</span></label>
-          </div>
-        </fieldset>
-        <label class="field" id="campo-direccion" hidden>
-          <span>Dirección</span>
-          <textarea name="direccion" rows="2" autocomplete="street-address"></textarea>
-        </label>
+        <p class="muted small">Pedido para recoger en Plaza Inari, local 11, San Pedro Sula.</p>
         <p class="form-error" id="pedido-error" hidden></p>
         <div class="cart-total"><span>Total</span><strong id="cart-total">L.0</strong></div>
         <button type="submit" class="btn btn--wa btn--block">Enviar pedido por WhatsApp</button>
