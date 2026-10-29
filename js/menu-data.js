@@ -5,6 +5,8 @@ const MENU = {
   telefono: '+504 8997-7604',
   // Mesas numeradas (enlace ?mesa=1 a ?mesa=12). La barra usa ?mesa=barra
   mesas: 12,
+  // WiFi para clientes (provisional: cambiar por la red y clave reales)
+  wifi: { red: 'Calamar_Clientes', clave: 'Ceviche2026' },
 
   ceviche: {
     mariscos: ['Camarón', 'Caracol', 'Pescado'],

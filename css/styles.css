@@ -136,6 +136,21 @@ html:has(.mesa-banner:not([hidden])) { scroll-padding-top: 110px; }
   box-shadow: 0 20px 60px rgba(0, 0, 0, .45), 0 0 0 1px rgba(184, 115, 63, .4);
 }
 
+/* WiFi y redes */
+.connect { padding: 32px 0 0; }
+.connect__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.connect__card {
+  padding: 1.25rem 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.connect__card h3 { font-size: 1.15rem; color: var(--sea-dark); }
+.connect__card p { margin: 0 0 .5rem; }
+.connect__row { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px dashed var(--line); padding-bottom: .35rem; }
+.connect__card .btn { margin-top: .5rem; }
+.social-btns { display: flex; flex-wrap: wrap; gap: .5rem; }
+
 /* Secciones */
 .section { padding: 80px 0; }
 .section--alt { background: var(--paper-2); }
@@ -400,7 +415,8 @@ legend small { font-weight: 400; color: var(--muted); margin-left: .35rem; }
   .nav a { padding: .75rem 0; width: 100%; }
   .nav .btn { text-align: center; margin-top: .5rem; }
 
-  .split, .ceviche-card { grid-template-columns: 1fr; gap: 2rem; }
+  .split, .ceviche-card, .connect__grid { grid-template-columns: 1fr; gap: 2rem; }
+  .connect__grid { gap: 1rem; }
   .hero__inner { grid-template-columns: 1fr; gap: 2rem; padding: 48px 0; }
   .hero__logo { order: -1; width: 160px; }
   .ceviche-card { padding: 1.25rem; }
