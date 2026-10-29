@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calamar Cevicheria</title>
-  <meta name="description" content="Calamar Cevicheria: ceviches, mariscos y sabores del mar.">
+  <meta name="description" content="Calamar Cevicheria: arma tu ceviche de camarón, caracol o pescado y haz tu pedido por WhatsApp.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -17,17 +17,18 @@
     <div class="container header__inner">
       <a href="#inicio" class="logo">
         <!-- TODO: reemplazar por <img src="img/logo.png" alt="Calamar Cevicheria"> cuando llegue el logo -->
-        <span class="logo__text">Calamar <em>Cevicheria</em></span>
+        <span class="logo__name">Calamar</span>
+        <span class="logo__sub">Cevicheria</span>
       </a>
       <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <nav class="nav">
         <a href="#menu">Menú</a>
-        <a href="#nosotros">Nosotros</a>
+        <a href="#bebidas-sec">Bebidas</a>
         <a href="#galeria">Galería</a>
         <a href="#visitanos">Visítanos</a>
-        <a href="#contacto" class="btn btn--small">Reservar</a>
+        <a href="#menu" class="btn btn--small btn--brass">Pedir</a>
       </nav>
     </div>
   </header>
@@ -37,10 +38,10 @@
     <section id="inicio" class="hero">
       <div class="container hero__content">
         <p class="eyebrow">Ceviches &amp; mariscos</p>
-        <h1>El sabor del mar,<br>recién preparado.</h1>
-        <p class="hero__lead">Texto de bienvenida pendiente. Aquí va una frase corta que describa el restaurante.</p>
+        <h1>Tu ceviche,<br>a tu manera.</h1>
+        <p class="hero__lead">Elige tus mariscos, tu complemento y tu salsa. Arma tu pedido aquí y te lo enviamos directo a WhatsApp.</p>
         <div class="hero__actions">
-          <a href="#menu" class="btn">Ver el menú</a>
+          <a href="#menu" class="btn btn--brass">Armar mi pedido</a>
           <a href="#visitanos" class="btn btn--ghost">Cómo llegar</a>
         </div>
       </div>
@@ -49,46 +50,42 @@
     <!-- Menú -->
     <section id="menu" class="section">
       <div class="container">
+        <p class="eyebrow eyebrow--dark">Menú Calamar</p>
         <h2 class="section__title">Nuestro menú</h2>
-        <p class="section__lead">Platos y precios de ejemplo — se reemplazan con el menú real.</p>
 
-        <div class="menu-grid">
-          <div class="menu-cat">
+        <!-- Ceviches -->
+        <article class="ceviche-card">
+          <div class="ceviche-card__info">
             <h3>Ceviches</h3>
-            <ul class="menu-list">
-              <li><span>Ceviche de pescado</span><span class="price">$0.00</span></li>
-              <li><span>Ceviche de calamar</span><span class="price">$0.00</span></li>
-              <li><span>Ceviche mixto</span><span class="price">$0.00</span></li>
-            </ul>
+            <p>Elige de 1 a 3 mariscos: <strong>camarón, caracol y pescado</strong>. Cada ceviche incluye un complemento y una salsa.</p>
+            <ul class="price-list" id="ceviche-precios"></ul>
           </div>
-          <div class="menu-cat">
-            <h3>Platos fuertes</h3>
-            <ul class="menu-list">
-              <li><span>Calamares fritos</span><span class="price">$0.00</span></li>
-              <li><span>Arroz con mariscos</span><span class="price">$0.00</span></li>
-              <li><span>Pescado a la plancha</span><span class="price">$0.00</span></li>
-            </ul>
+          <div class="ceviche-card__options">
+            <div>
+              <h4>Salsas</h4>
+              <ul class="tag-list" id="ceviche-salsas"></ul>
+            </div>
+            <div>
+              <h4>Complementos</h4>
+              <ul class="tag-list" id="ceviche-complementos"></ul>
+            </div>
+            <p class="muted small">Complemento o salsa extra: +L.30 c/u</p>
+            <button class="btn" id="abrir-ceviche">Armar mi ceviche</button>
           </div>
-          <div class="menu-cat">
-            <h3>Bebidas</h3>
-            <ul class="menu-list">
-              <li><span>Limonada</span><span class="price">$0.00</span></li>
-              <li><span>Refrescos</span><span class="price">$0.00</span></li>
-              <li><span>Cervezas</span><span class="price">$0.00</span></li>
-            </ul>
-          </div>
-        </div>
+        </article>
+
+        <!-- Platos -->
+        <h3 class="sub-title">Platos</h3>
+        <div class="dishes" id="platos"></div>
       </div>
     </section>
 
-    <!-- Nosotros -->
-    <section id="nosotros" class="section section--alt">
-      <div class="container split">
-        <div class="photo-placeholder">Foto del local</div>
-        <div>
-          <h2 class="section__title">Nosotros</h2>
-          <p>Historia del restaurante pendiente: cómo empezó, qué los hace distintos y de dónde vienen sus mariscos.</p>
-        </div>
+    <!-- Bebidas -->
+    <section id="bebidas-sec" class="section section--alt">
+      <div class="container">
+        <p class="eyebrow eyebrow--dark">Menú de licores</p>
+        <h2 class="section__title">Bebidas</h2>
+        <div class="drinks" id="bebidas"></div>
       </div>
     </section>
 
@@ -113,26 +110,30 @@
       <div class="container split">
         <div>
           <h2 class="section__title">Visítanos</h2>
-          <p><strong>Dirección:</strong> pendiente</p>
+          <p><strong>Dirección:</strong> Plaza Inari, 2 Avenida, San Pedro Sula, Cortés</p>
+          <p><strong>Teléfono:</strong> <a href="tel:+50489977604">+504 8997-7604</a></p>
           <h3>Horario</h3>
           <ul class="hours">
-            <li><span>Lunes – Viernes</span><span>pendiente</span></li>
-            <li><span>Sábado</span><span>pendiente</span></li>
-            <li><span>Domingo</span><span>pendiente</span></li>
+            <li><span>Martes – Domingo</span><span>11:00 a.m. – 10:00 p.m.</span></li>
+            <li><span>Lunes</span><span>Cerrado</span></li>
           </ul>
+          <a href="https://www.google.com/maps/place/Cevicheria+Calamar/@15.5527578,-88.0256137,17z" class="btn btn--outline btn--small directions" target="_blank" rel="noopener">Abrir en Google Maps</a>
         </div>
-        <!-- TODO: reemplazar por el iframe de Google Maps del local -->
-        <div class="photo-placeholder">Mapa</div>
+        <iframe
+          class="map"
+          title="Mapa de Calamar Cevicheria"
+          src="https://maps.google.com/maps?q=15.5527578,-88.0256137&z=17&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
 
     <!-- Contacto -->
     <section id="contacto" class="section cta">
       <div class="container">
-        <h2 class="section__title">Reserva o haz tu pedido</h2>
-        <p class="section__lead">Escríbenos y te atendemos al momento.</p>
-        <!-- TODO: poner el número real en el enlace, formato https://wa.me/50300000000 -->
-        <a href="#" class="btn btn--light">Escribir por WhatsApp</a>
+        <h2 class="section__title">Haz tu pedido</h2>
+        <p class="section__lead">Arma tu pedido en el menú o escríbenos directamente al +504 8997-7604.</p>
+        <a href="https://wa.me/50489977604" class="btn btn--wa" target="_blank" rel="noopener">Escribir por WhatsApp</a>
       </div>
     </section>
   </main>
@@ -149,6 +150,109 @@
     </div>
   </footer>
 
+  <!-- Armar ceviche -->
+  <dialog class="dialog" id="dlg-ceviche">
+    <form class="dialog__body" id="form-ceviche" novalidate>
+      <header class="dialog__head">
+        <h3>Arma tu ceviche</h3>
+        <button type="button" class="dialog__close" data-close aria-label="Cerrar">&times;</button>
+      </header>
+      <fieldset>
+        <legend>Mariscos <small>elige de 1 a 3</small></legend>
+        <div class="chips" id="opt-mariscos"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Tamaño</legend>
+        <div class="chips" id="opt-tamano"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Complemento <small>1 incluido · extra +L.30</small></legend>
+        <div class="chips" id="opt-complementos"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Salsa <small>1 incluida · extra +L.30</small></legend>
+        <div class="chips" id="opt-salsas"></div>
+      </fieldset>
+      <label class="field">
+        <span>Comentario</span>
+        <textarea name="nota" rows="2" placeholder="Ej.: sin cebolla, mitad negrita y mitad dulce"></textarea>
+      </label>
+      <p class="form-error" id="ceviche-error" hidden></p>
+      <footer class="dialog__foot">
+        <div class="qty" data-qty>
+          <button type="button" data-step="-1" aria-label="Menos">&minus;</button>
+          <output>1</output>
+          <button type="button" data-step="1" aria-label="Más">+</button>
+        </div>
+        <button type="submit" class="btn" id="ceviche-add">Agregar</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- Agregar plato -->
+  <dialog class="dialog" id="dlg-plato">
+    <form class="dialog__body" id="form-plato">
+      <header class="dialog__head">
+        <h3 id="plato-nombre"></h3>
+        <button type="button" class="dialog__close" data-close aria-label="Cerrar">&times;</button>
+      </header>
+      <p class="muted" id="plato-desc"></p>
+      <label class="field">
+        <span>Comentario</span>
+        <textarea name="nota" rows="2"></textarea>
+      </label>
+      <footer class="dialog__foot">
+        <div class="qty" data-qty>
+          <button type="button" data-step="-1" aria-label="Menos">&minus;</button>
+          <output>1</output>
+          <button type="button" data-step="1" aria-label="Más">+</button>
+        </div>
+        <button type="submit" class="btn" id="plato-add">Agregar</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- Pedido -->
+  <dialog class="dialog dialog--drawer" id="dlg-pedido">
+    <div class="dialog__body">
+      <header class="dialog__head">
+        <h3>Tu pedido</h3>
+        <button type="button" class="dialog__close" data-close aria-label="Cerrar">&times;</button>
+      </header>
+      <div class="cart-items" id="cart-items"></div>
+      <form class="cart-form" id="form-pedido" novalidate>
+        <label class="field">
+          <span>Tu nombre</span>
+          <input name="nombre" autocomplete="name" required>
+        </label>
+        <fieldset>
+          <legend>Entrega</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="entrega" value="Para recoger" checked><span>Para recoger</span></label>
+            <label class="chip"><input type="radio" name="entrega" value="A domicilio"><span>A domicilio</span></label>
+          </div>
+        </fieldset>
+        <label class="field" id="campo-direccion" hidden>
+          <span>Dirección</span>
+          <textarea name="direccion" rows="2" autocomplete="street-address"></textarea>
+        </label>
+        <p class="form-error" id="pedido-error" hidden></p>
+        <div class="cart-total"><span>Total</span><strong id="cart-total">L.0</strong></div>
+        <button type="submit" class="btn btn--wa btn--block">Enviar pedido por WhatsApp</button>
+        <p class="muted small center">Se abre WhatsApp con tu pedido listo para enviar.</p>
+        <button type="button" class="link-btn" id="vaciar">Vaciar pedido</button>
+      </form>
+    </div>
+  </dialog>
+
+  <button class="cart-fab" id="cart-fab" hidden>
+    Mi pedido <span class="cart-fab__count" id="cart-count">0</span>
+    <span id="cart-fab-total"></span>
+  </button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/menu-data.js"></script>
+  <script src="js/pedido.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
