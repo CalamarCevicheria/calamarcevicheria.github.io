@@ -97,6 +97,20 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; margin: 0 
 .nav-toggle { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
 .nav-toggle span { display: block; width: 24px; height: 2px; margin: 5px 0; background: var(--white); }
 
+/* Aviso de mesa (cuando entran por el QR / NFC) */
+.mesa-banner {
+  position: sticky;
+  top: 64px;
+  z-index: 9;
+  padding: .5rem 16px;
+  background: var(--brass);
+  color: var(--white);
+  font-weight: 600;
+  text-align: center;
+}
+.mesa-banner[hidden] { display: none; }
+html:has(.mesa-banner:not([hidden])) { scroll-padding-top: 110px; }
+
 /* Portada */
 .hero {
   min-height: 78vh;

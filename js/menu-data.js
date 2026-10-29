@@ -3,6 +3,8 @@
 const MENU = {
   whatsapp: '50489977604',
   telefono: '+504 8997-7604',
+  // Mesas numeradas (enlace ?mesa=1 a ?mesa=12). La barra usa ?mesa=barra
+  mesas: 12,
 
   ceviche: {
     mariscos: ['Camarón', 'Caracol', 'Pescado'],

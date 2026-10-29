@@ -8,6 +8,27 @@ const esc = (s) => String(s).replace(/[&<>"']/g, (c) => (
 
 const C = MENU.ceviche;
 
+// ---------- Mesa ----------
+// Viene en el enlace del QR / NFC de cada mesa: ?mesa=5 o ?mesa=barra
+const MESA = (() => {
+  const m = new URLSearchParams(location.search).get('mesa');
+  if (m && m.toLowerCase() === 'barra') return { tipo: 'barra', nombre: 'Barra' };
+  const n = Number(m);
+  return Number.isInteger(n) && n >= 1 && n <= MENU.mesas ? { tipo: 'mesa', nombre: `Mesa ${n}` } : null;
+})();
+const nombreOpcional = MESA?.tipo === 'mesa';
+
+function pintarMesa() {
+  if (!MESA) return;
+  const banner = $('#mesa-banner');
+  banner.textContent = MESA.tipo === 'barra' ? 'Estás pidiendo desde la barra' : `Estás pidiendo desde la ${MESA.nombre}`;
+  banner.hidden = false;
+  $('#pedido-lugar').textContent = MESA.tipo === 'barra'
+    ? 'Pedido para la barra. Escribe tu nombre para llevártelo.'
+    : `Pedido para la ${MESA.nombre}.`;
+  if (nombreOpcional) $('#nombre-label').textContent = 'Tu nombre (opcional)';
+}
+
 // ---------- Menú ----------
 function pintarMenu() {
   $('#ceviche-precios').innerHTML = [
@@ -264,6 +285,7 @@ $$('dialog').forEach((d) => d.addEventListener('click', (e) => {
 const formPedido = $('#form-pedido');
 
 function mensaje({ nombre }) {
+  const desde = !MESA ? '' : MESA.tipo === 'barra' ? ' desde la *barra*' : ` desde la *${MESA.nombre}*`;
   const lineas = pedido.map((l) => [
     `• ${l.cantidad}x ${l.nombre} — ${L(l.precio * l.cantidad)}`,
     ...l.detalle.map((d) => `   ${d}`),
@@ -271,14 +293,14 @@ function mensaje({ nombre }) {
   ].join('\n'));
 
   return [
-    'Hola Calamar Cevicheria, quiero hacer un pedido:',
+    `Hola Calamar Cevicheria, quiero hacer un pedido${desde}:`,
     '',
     ...lineas,
     '',
     `*Total: ${L(total())}*`,
     '',
-    `Nombre: ${nombre}`,
-    'Para recoger',
+    ...(nombre ? [`Nombre: ${nombre}`] : []),
+    MESA ? MESA.nombre : 'Para recoger',
   ].join('\n');
 }
 
@@ -286,7 +308,7 @@ formPedido.addEventListener('submit', (e) => {
   e.preventDefault();
   const datos = { nombre: formPedido.nombre.value.trim() };
   const falta = !pedido.length ? 'Tu pedido está vacío.'
-    : !datos.nombre ? 'Escribe tu nombre.' : '';
+    : !datos.nombre && !nombreOpcional ? 'Escribe tu nombre.' : '';
   if (falta) {
     $('#pedido-error').textContent = falta;
     $('#pedido-error').hidden = false;
@@ -305,6 +327,7 @@ $('#vaciar').addEventListener('click', () => {
 
 $('#cart-fab').addEventListener('click', () => $('#dlg-pedido').showModal());
 
+pintarMesa();
 pintarMenu();
 pintarOpcionesCeviche();
 pintarPedido();

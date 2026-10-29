@@ -39,6 +39,7 @@
       </nav>
     </div>
   </header>
+  <div class="mesa-banner" id="mesa-banner" hidden></div>
 
   <main>
     <!-- Portada -->
@@ -231,10 +232,10 @@
       <div class="cart-items" id="cart-items"></div>
       <form class="cart-form" id="form-pedido" novalidate>
         <label class="field">
-          <span>Tu nombre</span>
-          <input name="nombre" autocomplete="name" required>
+          <span id="nombre-label">Tu nombre</span>
+          <input name="nombre" autocomplete="name">
         </label>
-        <p class="muted small">Pedido para recoger en Plaza Inari, local 11, San Pedro Sula.</p>
+        <p class="muted small" id="pedido-lugar">Pedido para recoger en Plaza Inari, local 11, San Pedro Sula.</p>
         <p class="form-error" id="pedido-error" hidden></p>
         <div class="cart-total"><span>Total</span><strong id="cart-total">L.0</strong></div>
         <button type="submit" class="btn btn--wa btn--block">Enviar pedido por WhatsApp</button>
