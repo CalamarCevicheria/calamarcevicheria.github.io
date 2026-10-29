@@ -21,9 +21,8 @@ con el pedido escrito y el total. No hay servidor: todo pasa en el navegador.
 
 ## Pendiente
 
-- [ ] Logo (`img/logo.png`)
+- [ ] Logo definitivo (el actual `img/logo.jpg` es provisional)
 - [ ] Fotos: portada, local y galería
-- [ ] Enlaces de redes sociales
 
 ## Ver la página en tu computadora
 

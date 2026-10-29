@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calamar Cevicheria</title>
   <meta name="description" content="Calamar Cevicheria: arma tu ceviche de camarón, caracol o pescado y haz tu pedido por WhatsApp.">
+  <link rel="icon" href="img/logo.jpg">
+  <meta property="og:title" content="Calamar Cevicheria">
+  <meta property="og:description" content="Ceviches preparados al momento en Plaza Inari, San Pedro Sula. Arma tu pedido y envíalo por WhatsApp.">
+  <meta property="og:image" content="https://calamarcevicheria.github.io/img/logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -16,8 +20,8 @@
   <header class="header">
     <div class="container header__inner">
       <a href="#inicio" class="logo">
-        <!-- Logo provisional: si img/logo.jpg no existe, queda solo el texto -->
-        <img src="img/logo.jpg" alt="" class="logo__img" onerror="this.remove()">
+        <!-- Logo provisional -->
+        <img src="img/logo.jpg" alt="" class="logo__img">
         <span class="logo__text">
           <span class="logo__name">Calamar</span>
           <span class="logo__sub">Cevichería</span>
@@ -39,7 +43,8 @@
   <main>
     <!-- Portada -->
     <section id="inicio" class="hero">
-      <div class="container hero__content">
+      <div class="container hero__inner">
+      <div class="hero__content">
         <p class="eyebrow">Ceviches &amp; mariscos</p>
         <h1>Tu ceviche,<br>a tu manera.</h1>
         <p class="hero__lead">Frescura que se nota desde el primer bocado. Ceviches preparados al momento: elige tus mariscos, tu complemento y tu salsa, y envía tu pedido por WhatsApp.</p>
@@ -47,6 +52,8 @@
           <a href="#menu" class="btn btn--brass">Armar mi pedido</a>
           <a href="#visitanos" class="btn btn--ghost">Cómo llegar</a>
         </div>
+      </div>
+      <img src="img/logo.jpg" alt="Logo de Calamar Cevicheria" class="hero__logo">
       </div>
     </section>
 
@@ -145,9 +152,7 @@
       <p>&copy; <span id="year"></span> Calamar Cevicheria</p>
       <nav class="footer__social">
         <a href="https://www.instagram.com/calamar.cevicheriahn/" target="_blank" rel="noopener">Instagram</a>
-        <!-- TODO: agregar Facebook cuando tengamos el enlace exacto de la página -->
-        <!-- <a href="https://www.facebook.com/..." target="_blank" rel="noopener">Facebook</a> -->
-
+        <a href="https://www.facebook.com/profile.php?id=61593889895520" target="_blank" rel="noopener">Facebook</a>
 
         <a href="https://wa.me/50489977604" target="_blank" rel="noopener">WhatsApp</a>
       </nav>

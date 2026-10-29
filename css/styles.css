@@ -113,6 +113,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; margin: 0 
 .hero h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); }
 .hero__lead { max-width: 520px; font-size: 1.1rem; opacity: .9; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+.hero__inner { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; }
+.hero__logo {
+  width: clamp(240px, 30vw, 380px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .45), 0 0 0 1px rgba(184, 115, 63, .4);
+}
 
 /* Secciones */
 .section { padding: 80px 0; }
@@ -379,6 +387,8 @@ legend small { font-weight: 400; color: var(--muted); margin-left: .35rem; }
   .nav .btn { text-align: center; margin-top: .5rem; }
 
   .split, .ceviche-card { grid-template-columns: 1fr; gap: 2rem; }
+  .hero__inner { grid-template-columns: 1fr; gap: 2rem; padding: 48px 0; }
+  .hero__logo { order: -1; width: 160px; }
   .ceviche-card { padding: 1.25rem; }
   .section { padding: 56px 0; }
   .dialog__body { padding: 1rem 1.1rem 1.25rem; }
